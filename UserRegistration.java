@@ -66,7 +66,7 @@ public class UserRegistration {
       Boolean phoneNum = Pattern.matches("^[9][1] [6-9]{1}[0-9]{9}" ,UserRegistration.phoneNum());
 
 		//regex check for password
-      Boolean passwordCheck = Pattern.matches("^(?=.*[a-z])(?=.*[A-Z]).{8,20}" ,UserRegistration.passwordCheck());
+      Boolean passwordCheck = Pattern.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,20}" ,UserRegistration.passwordCheck());
 
       //loop for incorrect entry
       while(firstName == false) {
@@ -91,7 +91,7 @@ public class UserRegistration {
 
 		while(passwordCheck == false) {
          System.out.println("Error! Invalid input from user please enter your password in valid format(should contain atleast 8 characters and atleast one upper case letter).");
-     		passwordCheck = Pattern.matches("^(?=.*[a-z])(?=.*[A-Z]).{8,}" ,UserRegistration.passwordCheck());
+     		passwordCheck = Pattern.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}" ,UserRegistration.passwordCheck());
 		}
 
       //printing the user input
