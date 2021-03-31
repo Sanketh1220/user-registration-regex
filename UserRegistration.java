@@ -84,12 +84,12 @@ public class UserRegistration {
          lastName = Pattern.matches("^[a][b][c][.][a-z]{3}@[b][l][.][c][o][.][a-z]{2}",UserRegistration.emailId());
       }
 		
-		while(emailId == false) {
+		while(phoneNum == false) {
 			System.out.println("Error! Invalid input from user please enter your phone number in valid format(ex-'91 9999999999').");
 			phoneNum = Pattern.matches("^[9][1] [6-9]{1}[0-9]{9}" ,UserRegistration.phoneNum());
 		}
 
-		while(emailId == false) {
+		while(passwordCheck == false) {
          System.out.println("Error! Invalid input from user please enter your password in valid format(should contain atleast 8 characters).");
      		passwordCheck = Pattern.matches("^[a-z]{8,}" ,UserRegistration.passwordCheck());
 		}
