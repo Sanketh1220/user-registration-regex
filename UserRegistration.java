@@ -5,7 +5,8 @@ public class UserRegistration {
 
 	static String fName;
 	static String lName;
-
+	static String email;
+	
    //uc-1 taking first name as input from user
    static String firstName(){
       Scanner str1 = new Scanner(System.in);
@@ -22,6 +23,13 @@ public class UserRegistration {
       return lName;
    }
 	
+	//uc3 taking phone number as input from user
+	static String emailId(){
+		Scanner str3 = new Scanner(System.in);
+		System.out.println("Enter your email ID in (abc.xyz@bl.co.in): ");
+		email = str3.nextLine();
+		return email;
+	}
 
    public static void main(String args[]) {
       //welcome note for user
@@ -32,6 +40,10 @@ public class UserRegistration {
 
 		//regex check for last name
       Boolean lastName = Pattern.matches("^[A-Z]{1}[a-z]{2,}",UserRegistration.lastName());
+
+		//regex check for email
+		Boolean emailId = Pattern.matches("^[a][b][c][.][a-z]{3}@[b][l][.][c][o][.][a-z]{2}" ,UserRegistration.emailId());
+
 
       //loop for incorrect entry
       while(firstName == false) {
@@ -44,9 +56,14 @@ public class UserRegistration {
          lastName = Pattern.matches("^[A-Z]{1}[a-z]{2,}",UserRegistration.lastName());
       }
 
+		while(emailId == false) {
+         System.out.println("Error! Invalid input from user please enter your email Id in valid format(ex-'abc.xyz@bl.co.in).");
+         lastName = Pattern.matches("^[a][b][c][.][a-z]{3}[@][b][l][.][c][o][.][a-z]{2}",UserRegistration.emailId());
+      }
+
       //printing the user input
       System.out.println("First Name: " + fName);
 		System.out.println("Last Name: " + lName);
-		
+		System.out.println("Email ID: " + email);
 	}
 }
