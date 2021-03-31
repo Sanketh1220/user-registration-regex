@@ -28,7 +28,7 @@ public class UserRegistration {
 	//uc3 taking email as input from user
 	static String emailId(){
 		Scanner str3 = new Scanner(System.in);
-		System.out.println("Enter your email ID in (abc.xyz@bl.co.in): ");
+		System.out.println("Enter your email ID in (abc.xyz@bl.co.in) 'abc.' is compulsory xyz can be any three letters '@bl.co' is compulsory and 'in' can be any letters : ");
 		email = str3.nextLine();
 		return email;
 	}
@@ -44,7 +44,7 @@ public class UserRegistration {
 	//uc5 taking password from user
 	static String passwordCheck(){
       Scanner str5 = new Scanner(System.in);
-      System.out.println("Enter your password of atleast 8 characters): ");
+      System.out.println("Enter your password of atleast 8 characters and atleast one upper case letter): ");
       password = str5.nextLine();
       return password;
    } 
@@ -60,13 +60,13 @@ public class UserRegistration {
       Boolean lastName = Pattern.matches("^[A-Z]{1}[a-z]{2,}",UserRegistration.lastName());
 
 		//regex check for email
-		Boolean emailId = Pattern.matches("^[a][b][c][.][a-z]{3}[@][b][l][.][c][o][.][a-z]{2}" ,UserRegistration.emailId());
+		Boolean emailId = Pattern.matches("^[a][b][c][.][a-z]{3}@[b][l][.][c][o][.][a-z]{2}" ,UserRegistration.emailId());
 		
 		//regex check for phone number
       Boolean phoneNum = Pattern.matches("^[9][1] [6-9]{1}[0-9]{9}" ,UserRegistration.phoneNum());
 
 		//regex check for password
-      Boolean passwordCheck = Pattern.matches("^[a-zA-Z]{8,}" ,UserRegistration.passwordCheck());
+      Boolean passwordCheck = Pattern.matches("^(?=.*[a-z])(?=.*[A-Z]).{8,20}" ,UserRegistration.passwordCheck());
 
       //loop for incorrect entry
       while(firstName == false) {
@@ -80,27 +80,27 @@ public class UserRegistration {
       }
 
 		while(emailId == false) {
-         System.out.println("Error! Invalid input from user please enter your email Id in valid format(ex-'abc.xyz@bl.co.in).");
-         lastName = Pattern.matches("^[a][b][c][.][a-z]{3}@[b][l][.][c][o][.][a-z]{2}",UserRegistration.emailId());
+         System.out.println("Error! Invalid input from user please enter your email Id in valid format(ex-'abc.xyz@bl.co.in) 'abc.' is compulsory xyz can be any three letters '@bl.co' is compulsory and 'in' can be any letters .");
+         emailId = Pattern.matches("^[a][b][c][.][a-z]{3}@[b][l][.][c][o][.][a-z]{2}",UserRegistration.emailId());
       }
 		
-		while(emailId == false) {
+		while(phoneNum == false) {
 			System.out.println("Error! Invalid input from user please enter your phone number in valid format(ex-'91 9999999999').");
 			phoneNum = Pattern.matches("^[9][1] [6-9]{1}[0-9]{9}" ,UserRegistration.phoneNum());
 		}
 
-		while(emailId == false) {
-         System.out.println("Error! Invalid input from user please enter your password in valid format(should contain atleast 8 characters).");
-     		passwordCheck = Pattern.matches("^[a-z]{8,}" ,UserRegistration.passwordCheck());
+		while(passwordCheck == false) {
+         System.out.println("Error! Invalid input from user please enter your password in valid format(should contain atleast 8 characters and atleast one upper case letter).");
+     		passwordCheck = Pattern.matches("^(?=.*[a-z])(?=.*[A-Z]).{8,}" ,UserRegistration.passwordCheck());
 		}
 
       //printing the user input
-		System.out.println("-------------------------");
+		System.out.println("-----------------------------");
       System.out.println("First Name: " + fName);
 		System.out.println("Last Name: " + lName);
 		System.out.println("Email ID: " + email);
 		System.out.println("Phone number: +" + pNum);
 		System.out.println("Password: " + password);
-		System.out.println("-------------------------");
+		System.out.println("-----------------------------");
 	}
 }
