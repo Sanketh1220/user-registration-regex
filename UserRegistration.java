@@ -50,9 +50,9 @@ public class UserRegistration {
    } 
 	
 	//uc6 email samples regex
-	static Boolean allEmailChecks(String a){
-		Boolean emailCheck = Pattern.matches("^(?!\.)[A-Za-z0-9]+([._%+-]?[0-9])*@[A-Za-z0-9-]+\.[a-zA-Z]{2,6}(\.[A-Za-z]{2,6})?$",a);
-		return emailCheck;
+	static void allEmailChecks(String a){
+		Boolean emailCheck = Pattern.matches("^(?!\\.)[A-Za-z0-9]+([._%+-]?[0-9])*@[A-Za-z0-9-]+\\.[a-zA-Z]{2,6}(\\.[A-Za-z]{2,6})?$",a);
+		System.out.println(emailCheck);
 	}
 
    public static void main(String args[]) {
@@ -132,7 +132,7 @@ public class UserRegistration {
 	allEmailChecks("abc..2002@gmail.com");
 	allEmailChecks("abc.@gmail.com");
 	allEmailChecks("abc@abc@gmail.com");
-	allEmailChecks("abc@gmail.com.la");	
+	allEmailChecks("abc@gmail.com.1a");	
 	allEmailChecks("abc@gmail.com.aa.au");
 	}
 }
