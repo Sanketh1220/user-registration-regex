@@ -1,5 +1,3 @@
-
-//import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -7,7 +5,7 @@ import org.junit.jupiter.api.Test;
 public class FundamentalTest {
 
     @Test
-    void CheckGiven_FirstName_WhileCorrect_Return_True() {
+    void CheckGiven_FirstName_WhileCorrect_Return_Happy_WhileWrong_Return_Sad() {
         UserInputsValidator fName = new UserInputsValidator();
         String res = fName.firstName("Sanketh");
         String ress = fName.firstName("SANKETH");
@@ -16,7 +14,7 @@ public class FundamentalTest {
     }
 
     @Test
-    void CheckGiven_LastName_WhileCorrect_Return_True() {
+    void CheckGiven_LastName_WhileCorrect_Return_Happy_WhileWrong_Return_Sad() {
         UserInputsValidator lName = new UserInputsValidator();
         String  res1 = lName.lastName("Chigurupalli");
         String  res11 = lName.lastName("cHkasjJ");
@@ -25,7 +23,7 @@ public class FundamentalTest {
     }
 
     @Test
-    void CheckGiven_Email_WhileCorrect_Return_True() {
+    void CheckGiven_Email_WhileCorrect_Return_Happy_WhileWrong_Return_Sad() {
         UserInputsValidator eMail = new UserInputsValidator();
         String res2 = eMail.email("abc.abc@bl.co.us");
         String res22 = eMail.email("aXc.abc@bl.co.us");
@@ -34,7 +32,7 @@ public class FundamentalTest {
     }
 
     @Test
-    void CheckGiven_PhoneNumber_WhileCorrect_Return_True() {
+    void CheckGiven_PhoneNumber_WhileCorrect_Happy_WhileWrong_Return_Sad() {
         UserInputsValidator phoneNum = new UserInputsValidator();
         String res3 = phoneNum.phoneNumber("91 9700488694");
         String res33 = phoneNum.phoneNumber("90909");
@@ -43,7 +41,7 @@ public class FundamentalTest {
     }
 
     @Test
-    void CheckGiven_Password_WhileCorrect_Return_True() {
+    void CheckGiven_Password_WhileCorrect_Happy_WhileWrong_Return_Sad() {
         UserInputsValidator passWord = new UserInputsValidator();
         String res4 = passWord.password("idenTical@11");
         String res44 = passWord.password("idenT11");
