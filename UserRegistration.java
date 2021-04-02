@@ -48,6 +48,12 @@ public class UserRegistration {
       password = str5.nextLine();
       return password;
    } 
+	
+	//uc6 email samples regex
+	static Boolean allEmailChecks(String a){
+		Boolean emailCheck = Pattern.matches("^(?!\.)[A-Za-z0-9]+([._%+-]?[0-9])*@[A-Za-z0-9-]+\.[a-zA-Z]{2,6}(\.[A-Za-z]{2,6})?$",a);
+		return emailCheck;
+	}
 
    public static void main(String args[]) {
       //welcome note for user
@@ -102,5 +108,31 @@ public class UserRegistration {
 		System.out.println("Phone number: +" + pNum);
 		System.out.println("Password: " + password);
 		System.out.println("-----------------------------");
+	
+	//valid email samples 	
+	allEmailChecks("abc@yahoo.com");
+	allEmailChecks("abc-100@yahoo.com");
+	allEmailChecks("abc.100@yahoo.com");
+	allEmailChecks("abc111@abc.com");
+	allEmailChecks("abc-100@abc.net");
+	allEmailChecks("abc.100 @abc.com.au");
+	allEmailChecks("abc@1.com");
+	allEmailChecks("abc@gmail.com.com");
+	allEmailChecks("abc+100@gmail.com");
+
+	//invalid email samples
+	allEmailChecks("abc");
+	allEmailChecks("abc@.com.my");
+	allEmailChecks("abc123@gmail.a");
+	allEmailChecks("abc123@.com");
+	allEmailChecks("abc123@.com.com");
+	allEmailChecks(".abc@abc.com");
+	allEmailChecks("abc()*@gmail.com");
+	allEmailChecks("abc@%*.com");
+	allEmailChecks("abc..2002@gmail.com");
+	allEmailChecks("abc.@gmail.com");
+	allEmailChecks("abc@abc@gmail.com");
+	allEmailChecks("abc@gmail.com.la");	
+	allEmailChecks("abc@gmail.com.aa.au");
 	}
 }
