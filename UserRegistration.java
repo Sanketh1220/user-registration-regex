@@ -115,7 +115,7 @@ public class UserRegistration {
 	allEmailChecks("abc.100@yahoo.com");
 	allEmailChecks("abc111@abc.com");
 	allEmailChecks("abc-100@abc.net");
-	allEmailChecks("abc.100 @abc.com.au");
+	allEmailChecks("abc.100@abc.com.au");
 	allEmailChecks("abc@1.com");
 	allEmailChecks("abc@gmail.com.com");
 	allEmailChecks("abc+100@gmail.com");
